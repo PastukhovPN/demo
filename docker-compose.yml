@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  postgresql:
+    image: docker.io/bitnami/postgresql:11
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'postgresql_data:/bitnami/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=program
+      - POSTGRESQL_DATABASE=spring_demo
+      - POSTGRESQL_PASSWORD=test
+
+volumes:
+  postgresql_data:
+    driver: local
